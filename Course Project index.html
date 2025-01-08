@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Management System</title>
     <style>
+        /* Global Styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
             margin: 0;
             padding: 0;
             color: #333;
+            line-height: 1.6;
         }
         header {
             background-color: #3a6ea5;
@@ -19,11 +21,11 @@
             text-align: center;
         }
         header h1 {
-            font-size: 2.5em;
+            font-size: 2.8em;
             margin: 0;
         }
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 40px auto;
             padding: 20px;
             background: #fff;
@@ -32,13 +34,13 @@
         }
         h2 {
             color: #3a6ea5;
-            font-size: 1.8em;
+            font-size: 2em;
             border-bottom: 2px solid #3a6ea5;
             margin-bottom: 20px;
             padding-bottom: 5px;
         }
         .description, .algorithms {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
@@ -50,6 +52,31 @@
         }
         li {
             margin-bottom: 8px;
+        }
+
+        /* Algorithm Section Styles */
+        .algorithms pre {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 5px;
+            font-family: "Courier New", Courier, monospace;
+            color: #333;
+            overflow-x: auto;
+        }
+        .algorithms code {
+            display: block;
+            white-space: pre-wrap;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+            .container {
+                margin: 20px;
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -63,54 +90,130 @@
     <!-- System Overview -->
     <div class="description">
         <h2>System Overview</h2>
-        <p>The Restaurant Management System is designed to streamline various operations in a restaurant. The system handles multiple tasks, including customer queue management, table reservations, inventory management, menu and billing, delivery tracking, and lodging for customers. By integrating all these features into a single platform, the system ensures smooth operations and enhances the customer experience. Below is a brief explanation of each core functionality:</p>
+        <p>The Restaurant Management System is designed to streamline various operations in a restaurant. The system handles multiple tasks, including customer queue management, table reservations, inventory management, menu and billing, delivery tracking, and lodging for customers. Below is a brief explanation of each core functionality and the algorithms used:</p>
 
         <h3>Customer Queue Management</h3>
-        <p>The Customer Queue Management system ensures that customers are served in the order they arrive. It follows a First In, First Out (FIFO) approach, meaning that the first customer to join the queue will be the first one to be served. This helps in maintaining an orderly flow of customers, reducing frustration, and optimizing the time spent on serving customers, ensuring no one is skipped or left waiting for too long.</p>
+        <p>The Customer Queue Management system ensures that customers are served in the order they arrive. It follows a First In, First Out (FIFO) approach, meaning that the first customer to join the queue will be the first one to be served.</p>
+
+        <div class="algorithms">
+            <h4>Algorithm: FIFO (First In, First Out)</h4>
+            <p>This algorithm is used to manage the order of customers in the queue. The first customer that arrives is the first one to be served. This method is implemented using a simple queue data structure where customers are added to the back and served from the front.</p>
+            <pre><code>
+class Queue:
+    def __init__(self):
+        self.queue = []
+    
+    def enqueue(self, customer):
+        self.queue.append(customer)
+    
+    def dequeue(self):
+        if len(self.queue) > 0:
+            return self.queue.pop(0)
+        else:
+            return "No customers in the queue"
+            </code></pre>
+        </div>
 
         <h3>Table Reservation System</h3>
-        <p>The Table Reservation System allows customers to book tables in advance, ensuring that there are no issues with table availability. It manages the status of each table, tracking which ones are reserved and which are free. This eliminates the risk of double bookings and ensures that customers get the table they reserved, improving overall service efficiency and customer satisfaction.</p>
+        <p>The Table Reservation System allows customers to book tables in advance. It manages the status of each table, tracking which ones are reserved and which are free.</p>
 
-        <h3>Inventory Management</h3>
-        <p>The Inventory Management system tracks the availability of food ingredients, beverages, and other supplies required to run the restaurant. This system helps in monitoring stock levels and ensures that items are replenished on time. It alerts the staff when certain items are running low, preventing disruptions in service and ensuring that popular menu items are always available for customers.</p>
-
-        <h3>Menu Management and Billing</h3>
-        <p>The Menu Management and Billing system handles the listing of menu items, their prices, and customer orders. Staff can update the menu with new dishes or changes in pricing, keeping the menu dynamic. When customers place their orders, the system calculates the total cost, applies taxes or discounts, and generates a bill for the customer. This system ensures that billing is accurate, and the menu is always up-to-date.</p>
+        <div class="algorithms">
+            <h4>Algorithm: Reservation Management</h4>
+            <p>The system checks for available tables before confirming a reservation. This can be implemented using an array of table objects, where each table has a status that can be updated when a reservation is made.</p>
+            <pre><code>
+class Table:
+    def __init__(self, table_id):
+        self.table_id = table_id
+        self.status = "Available"  # "Reserved" or "Available"
+        
+    def reserve(self):
+        if self.status == "Available":
+            self.status = "Reserved"
+            return "Table Reserved"
+        return "Table already reserved"
+            </code></pre>
+        </div>
 
         <h3>Delivery Management</h3>
-        <p>The Delivery Management system tracks customer orders that are placed for delivery. It ensures that each delivery is processed efficiently, from order confirmation to dispatch and final delivery. The system tracks the status of each order, ensuring that deliveries are made on time and that customers are kept informed throughout the process.</p>
+        <p>The Delivery Management system tracks customer orders that are placed for delivery. It ensures that each delivery is processed efficiently using a route optimization algorithm.</p>
 
-        <h3>Lodging System</h3>
-        <p>The Lodging System manages the booking of rooms for guests who wish to stay at the restaurant’s associated lodging facilities. It tracks room availability, guest information, and booking dates. This system helps in managing room reservations, ensuring there are no overbookings, and providing a seamless check-in and check-out experience for guests.</p>
-    </div>
+        <div class="algorithms">
+            <h4>Algorithm: Dijkstra’s Algorithm</h4>
+            <p>Dijkstra’s algorithm is used to find the shortest path for deliveries. It calculates the shortest route from the delivery center to the customer's location by evaluating all possible paths and selecting the optimal one.</p>
+            <pre><code>
+import heapq
 
-    <!-- Menu Management and Billing, Inventory Management -->
-    <div class="description">
-        <h2>Menu Management and Inventory Management</h2>
-        <p>I developed the Menu Management and Inventory Management functionalities for the system. These two aspects play a vital role in maintaining the flow of operations in the restaurant, and I focused on creating efficient, reliable features for both.</p>
-
-        <h3>Menu Management</h3>
-        <p>The Menu Management system allows restaurant staff to easily manage the food and drink items listed on the menu. This feature enables the addition, removal, and modification of menu items. Staff can update the availability of specific dishes based on the current stock, ensuring that customers are only shown items that are available. Additionally, prices can be updated quickly to reflect changes in ingredient costs or promotions. The system integrates with the billing system, so when an item is ordered, it automatically reflects in the customer's bill. The Menu Management system is a powerful tool that helps keep the restaurant’s offerings organized and customer-friendly, making it easier for both staff and customers to navigate the dining experience.</p>
+class Dijkstra:
+    def __init__(self, graph, start):
+        self.graph = graph
+        self.start = start
+        self.dist = {node: float('inf') for node in graph}
+        self.dist[start] = 0
+        self.queue = [(0, start)]
+    
+    def find_shortest_path(self):
+        while self.queue:
+            current_dist, current_node = heapq.heappop(self.queue)
+            if current_dist > self.dist[current_node]:
+                continue
+            for neighbor, weight in self.graph[current_node].items():
+                distance = current_dist + weight
+                if distance < self.dist[neighbor]:
+                    self.dist[neighbor] = distance
+                    heapq.heappush(self.queue, (distance, neighbor))
+        return self.dist
+            </code></pre>
+        </div>
 
         <h3>Inventory Management</h3>
-        <p>The Inventory Management system tracks the ingredients and supplies needed for the kitchen to prepare dishes. It allows the restaurant to monitor stock levels in real-time and alerts staff when stock is running low. This helps in maintaining the right balance of inventory, preventing waste and shortages. The system automatically updates the inventory as orders are placed and ingredients are used, providing accurate and up-to-date information on stock levels. Additionally, the system generates reports on inventory usage, helping the restaurant plan for future orders and avoid overstocking or understocking of ingredients. Efficient inventory management is essential for a restaurant to minimize waste, reduce costs, and ensure that customers receive their orders without delay.</p>
+        <p>The Inventory Management system tracks the availability of food ingredients, beverages, and other supplies. It alerts the staff when certain items are running low.</p>
+
+        <div class="algorithms">
+            <h4>Algorithm: Stock Management (Threshold Alert)</h4>
+            <p>The inventory management system uses a simple threshold-based algorithm to alert the staff when stock levels fall below a specified threshold.</p>
+            <pre><code>
+class Inventory:
+    def __init__(self, item, quantity, threshold):
+        self.item = item
+        self.quantity = quantity
+        self.threshold = threshold
+    
+    def check_stock(self):
+        if self.quantity < self.threshold:
+            return f"Alert: {self.item} is running low!"
+        return f"{self.item} is sufficiently stocked."
+            </code></pre>
+        </div>
+
+        <h3>Lodging System</h3>
+        <p>The Lodging System manages room bookings and ensures that there are no overbookings. It tracks the availability of rooms and handles guest check-ins and check-outs.</p>
+
+        <div class="algorithms">
+            <h4>Algorithm: Room Booking</h4>
+            <p>The lodging system uses a simple check for available rooms before allowing bookings. It checks the room status and ensures that overbooking is prevented.</p>
+            <pre><code>
+class Room:
+    def __init__(self, room_id):
+        self.room_id = room_id
+        self.status = "Available"  # "Occupied" or "Available"
+    
+    def book_room(self):
+        if self.status == "Available":
+            self.status = "Occupied"
+            return "Room Booked"
+        return "Room is already booked"
+            </code></pre>
+        </div>
     </div>
 
     <!-- Learning Outcomes -->
     <div class="description">
         <h2>Learning Outcomes</h2>
         <ul>
-            <li><strong>System Design:</strong> I learned how to design and integrate various functional components into a cohesive system. This project helped me understand how to structure different modules (such as customer queue management, reservations, inventory, and menu) to work seamlessly together.</li>
-            <li><strong>Object-Oriented Programming:</strong> Through the implementation of classes and objects for each module (e.g., customer queue, table reservation, inventory), I reinforced my knowledge of object-oriented programming concepts such as inheritance, encapsulation, and abstraction.</li>
-            <li><strong>Database Management:</strong> I gained experience in managing data and integrating the system with databases. This included handling real-time updates, maintaining data integrity, and ensuring that the system's performance remained optimal even as the data grew.</li>
-            <li><strong>Algorithm Implementation:</strong> I developed algorithms for various tasks, such as queue management (FIFO) and table reservations, learning how to apply different algorithms to real-world problems and optimize system performance.</li>
-            <li><strong>User Interface Design:</strong> I learned the importance of creating user-friendly interfaces that are easy for restaurant staff to use under pressure. This required thinking about the layout, functionality, and ease of use to enhance the user experience.</li>
-            <li><strong>Problem-Solving Skills:</strong> The project involved solving multiple real-world problems, from preventing double bookings in reservations to managing stock levels in the inventory. This process greatly improved my problem-solving skills and critical thinking abilities.</li>
-            <li><strong>Time Management:</strong> The project helped me learn how to manage time effectively by breaking down tasks into smaller, manageable parts. This also taught me how to prioritize tasks and meet deadlines efficiently.</li>
-            <li><strong>Collaboration and Communication:</strong> If working in a team, I learned the importance of communication and collaboration in completing a large-scale project. We worked together to ensure that all components of the system were well integrated and functioned harmoniously.</li>
-        </ul>
-    </div>
-</div>
-
-</body>
-</html>
+            <li><strong>System Design:</strong> I learned how to design and integrate various functional components into a cohesive system.</li>
+            <li><strong>Object-Oriented Programming:</strong> I reinforced my knowledge of object-oriented programming concepts.</li>
+            <li><strong>Database Management:</strong> I gained experience in managing data and integrating the system with databases.</li>
+            <li><strong>Algorithm Implementation:</strong> I developed algorithms for various tasks, such as queue management and table reservations.</li>
+            <li><strong>User Interface Design:</strong> I learned the importance of creating user-friendly interfaces.</li>
+            <li><strong>Problem-Solving Skills:</strong> The project greatly improved my problem-solving skills.</li>
+            <li><strong>Time Management:</strong> I learned how to manage time
