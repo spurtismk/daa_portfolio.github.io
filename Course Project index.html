@@ -51,18 +51,6 @@
         li {
             margin-bottom: 8px;
         }
-        .code-container {
-            background-color: #eef;
-            padding: 15px;
-            border-radius: 5px;
-            font-family: monospace;
-            overflow-x: auto;
-        }
-        pre {
-            margin: 0;
-            font-size: 0.9em;
-            line-height: 1.6;
-        }
     </style>
 </head>
 <body>
@@ -72,7 +60,7 @@
 </header>
 
 <div class="container">
-    <!-- Introduction -->
+    <!-- System Overview -->
     <div class="description">
         <h2>System Overview</h2>
         <p>This Restaurant Management System is designed to streamline various operations in a restaurant. It handles customer queues, table reservations, inventory tracking, and order processing, aiming to optimize both customer experience and operational efficiency.</p>
@@ -83,7 +71,6 @@
             <li>Inventory Management</li>
             <li>Menu and Billing System</li>
             <li>Delivery Management</li>
-            <li>Lodging and Room Booking</li>
         </ul>
         <p>By integrating these systems into one cohesive platform, the Restaurant Management System ensures that tasks are handled smoothly, reducing wait times, optimizing table usage, and maintaining accurate records.</p>
     </div>
@@ -92,192 +79,34 @@
     <div class="description">
         <h2>Customer Queue Management</h2>
         <p>The Customer Queue Management feature ensures that customers are served in the order they arrive. It uses a FIFO (First In, First Out) approach, guaranteeing that no customer is skipped or left waiting too long. This system helps in managing the customer flow and improving service efficiency.</p>
-        <p>Algorithm used:</p>
-        <ul>
-            <li>FIFO (First In, First Out) algorithm</li>
-        </ul>
     </div>
 
     <!-- Table Reservation System -->
     <div class="description">
         <h2>Table Reservation System</h2>
-        <p>Our Table Reservation System allows customers to book tables in advance. This ensures that there is no confusion about table availability. The system keeps track of reserved and available tables, preventing double-booking and ensuring a smooth dining experience.</p>
-        <p>The table reservation algorithm checks if a table is available and reserves it for the customer. Once the customer is done, the table's status is updated as available again.</p>
-        <p>Algorithm used:</p>
-        <ul>
-            <li>Table Lookup and Reservation Management</li>
-        </ul>
+        <p>The Table Reservation System allows customers to book tables in advance, ensuring that there is no confusion about table availability. The system keeps track of reserved and available tables, preventing double-booking and ensuring a smooth dining experience. The algorithm used ensures efficient handling of table reservations by checking availability before confirming bookings, and automatically updating table status once the customer is seated.</p>
     </div>
 
-    <!-- C++ Code Section -->
+    <!-- Inventory Management -->
     <div class="description">
-        <h2>Code Implementation</h2>
-        <h3>C++ Code</h3>
-        <div class="code-container">
-            <pre>
-#include &lt;iostream&gt;
-#include &lt;queue&gt;
-#include &lt;map&gt;
-#include &lt;string&gt;
+        <h2>Inventory Management</h2>
+        <p>The Inventory Management system plays a crucial role in maintaining an optimal stock level within the restaurant. It tracks the supplies, ingredients, and items required to run day-to-day operations. This functionality ensures that restaurant managers are informed of stock levels and can make timely orders to replenish items before they run out. This reduces food waste and minimizes shortages that could affect service.</p>
+    </div>
 
-using namespace std;
+    <!-- Menu and Billing System -->
+    <div class="description">
+        <h2>Menu and Billing System</h2>
+        <p>The Menu and Billing system is designed to simplify the customer ordering and payment process. It allows customers to browse the restaurant's menu, place orders efficiently, and generate bills for each customer. The system automatically calculates the total price, applying any applicable taxes or discounts. This feature is integrated with the inventory to adjust stock levels after each order, ensuring the menu reflects accurate availability of items.</p>
+    </div>
 
-// Customer Queue Management
-class CustomerQueue {
-    queue&lt;string&gt; customers;
-public:
-    void addCustomer(const string&amp; name) {
-        customers.push(name);
-    }
-
-    void removeCustomer() {
-        if (!customers.empty()) {
-            cout &lt;&lt; "Customer " &lt;&lt; customers.front() &lt;&lt; " has been served.\\n";
-            customers.pop();
-        } else {
-            cout &lt;&lt; "The queue is empty. No customers to serve.\\n";
-        }
-    }
-
-    void displayQueue() {
-        if (customers.empty()) {
-            cout &lt;&lt; "No customers in the queue.\\n";
-            return;
-        }
-        queue&lt;string&gt; temp = customers;
-        cout &lt;&lt; "Customers in the queue:\\n";
-        while (!temp.empty()) {
-            cout &lt;&lt; temp.front() &lt;&lt; "\\n";
-            temp.pop();
-        }
-    }
-};
-
-// Table Reservation System
-class Reservations {
-    map&lt;int, pair&lt;string, int&gt;&gt; reservations;  // table number -> (customer name, number of seats)
-    int totalTables;
-public:
-    Reservations(int tables) : totalTables(tables) {}
-
-    bool reserveTable(int table, const string&amp; name, int seats) {
-        if (table &gt; totalTables || table &lt; 1) {
-            cout &lt;&lt; "Invalid table number.\\n";
-            return false;
-        }
-        if (reservations.count(table)) {
-            cout &lt;&lt; "Table already reserved.\\n";
-            return false;
-        }
-        reservations[table] = make_pair(name, seats);
-        cout &lt;&lt; "Table " &lt;&lt; table &lt;&lt; " reserved for " &lt;&lt; name &lt;&lt; " with " &lt;&lt; seats &lt;&lt; " seats.\\n";
-        return true;
-    }
-
-    void releaseTable(int table) {
-        if (reservations.erase(table)) {
-            cout &lt;&lt; "Table " &lt;&lt; table &lt;&lt; " is now available.\\n";
-        } else {
-            cout &lt;&lt; "Table " &lt;&lt; table &lt;&lt; " is not reserved.\\n";
-        }
-    }
-
-    void displayReservations() {
-        if (reservations.empty()) {
-            cout &lt;&lt; "No reservations found.\\n";
-            return;
-        }
-        cout &lt;&lt; "Current reservations:\\n";
-        for (auto &it : reservations) {
-            cout &lt;&lt; "Table " &lt;&lt; it.first &lt;&lt; ": " &lt;&lt; it.second.first &lt;&lt; " (Seats: " &lt;&lt; it.second.second &lt;&lt; ")\\n";
-        }
-    }
-};
-
-// Main function
-int main() {
-    CustomerQueue queue;
-    Reservations reservations(10);  // 10 tables in the reservation system
-
-    int choice;
-    do {
-        cout &lt;&lt; "\\nRestaurant Management System\\n";
-        cout &lt;&lt; "1. Manage Customer Queue\\n";
-        cout &lt;&lt; "2. Manage Reservations\\n";
-        cout &lt;&lt; "3. Exit\\n";
-        cout &lt;&lt; "Enter your choice: ";
-        cin &gt;&gt; choice;
-
-        switch (choice) {
-            case 1: {
-                int queueChoice;
-                do {
-                    cout &lt;&lt; "\\nCustomer Queue Management\\n";
-                    cout &lt;&lt; "1. Add Customer\\n";
-                    cout &lt;&lt; "2. Remove Customer\\n";
-                    cout &lt;&lt; "3. Display Queue\\n";
-                    cout &lt;&lt; "4. Back\\n";
-                    cout &lt;&lt; "Enter your choice: ";
-                    cin &gt;&gt; queueChoice;
-
-                    if (queueChoice == 1) {
-                        string name;
-                        cout &lt;&lt; "Enter customer name: ";
-                        cin &gt;&gt; name;
-                        queue.addCustomer(name);
-                    } else if (queueChoice == 2) {
-                        queue.removeCustomer();
-                    } else if (queueChoice == 3) {
-                        queue.displayQueue();
-                    }
-                } while (queueChoice != 4);
-                break;
-            }
-            case 2: {
-                int reservationChoice;
-                do {
-                    cout &lt;&lt; "\\nReservation Management\\n";
-                    cout &lt;&lt; "1. Reserve Table\\n";
-                    cout &lt;&lt; "2. Release Table\\n";
-                    cout &lt;&lt; "3. Display Reservations\\n";
-                    cout &lt;&lt; "4. Back\\n";
-                    cout &lt;&lt; "Enter your choice: ";
-                    cin &gt;&gt; reservationChoice;
-
-                    if (reservationChoice == 1) {
-                        int table;
-                        string name;
-                        int seats;
-                        cout &lt;&lt; "Enter table number: ";
-                        cin &gt;&gt; table;
-                        cout &lt;&lt; "Enter customer name: ";
-                        cin &gt;&gt; name;
-                        cout &lt;&lt; "Enter number of seats: ";
-                        cin &gt;&gt; seats;
-                        reservations.reserveTable(table, name, seats);
-                    } else if (reservationChoice == 2) {
-                        int table;
-                        cout &lt;&lt; "Enter table number to release: ";
-                        cin &gt;&gt; table;
-                        reservations.releaseTable(table);
-                    } else if (reservationChoice == 3) {
-                        reservations.displayReservations();
-                    }
-                } while (reservationChoice != 4);
-                break;
-            }
-            case 3:
-                cout &lt;&lt; "Exiting...\\n";
-                break;
-            default:
-                cout &lt;&lt; "Invalid choice. Please try again.\\n";
-        }
-    } while (choice != 3);
-
-    return 0;
-}
-            </pre>
-        </div>
+    <!-- Learning Outcomes -->
+    <div class="description">
+        <h2>Learning Outcomes</h2>
+        <p>Throughout the development of this Restaurant Management System, I gained a wealth of knowledge and practical experience. One of the key learning outcomes was understanding the importance of system design and how various components need to interact seamlessly to create an efficient workflow. I learned how to integrate customer management, reservations, and billing systems into a unified platform. The project sharpened my skills in object-oriented programming, allowing me to better structure and organize code for readability and scalability.</p>
+        <p>Additionally, I deepened my understanding of algorithms and data structures. For example, implementing the FIFO algorithm for the customer queue and managing reservations using hash maps gave me hands-on experience with real-world applications of these concepts. I also developed a strong understanding of database management, as the system relied on efficient data storage for tracking tables, reservations, and inventory levels.</p>
+        <p>Working on the inventory and menu management system further enhanced my problem-solving skills. I had to design a system that could accurately track stock levels, integrate seamlessly with the billing process, and prevent discrepancies in the inventory data. This project helped me realize the importance of maintaining accurate data flow in real-time systems and the impact that small errors can have on operational efficiency.</p>
+        <p>In addition to technical skills, this project also taught me the significance of user experience (UX) design. I focused on creating an intuitive interface that would be easy to use for restaurant staff. This involved considering user needs, minimizing complexity, and ensuring that the system could be operated efficiently in a fast-paced environment.</p>
+        <p>Finally, this project strengthened my overall programming and project management abilities. I learned how to break down complex problems into smaller, manageable tasks and effectively manage time to meet deadlines. The experience taught me the value of testing and debugging, ensuring that each feature works as expected and handles edge cases appropriately.</p>
     </div>
 
 </div>
