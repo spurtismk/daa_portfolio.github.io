@@ -3,39 +3,47 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f8ff; /* light sea blue background */
-    color: #2f4f4f; /* dark sea green text color */
+    background-color: #f0f8ff;
+    color: #2f4f4f;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #20b2aa; /* light sea green */
+    background-color: #20b2aa;
     color: white;
-    padding: 20px;
+    padding: 50px 20px;
     text-align: center;
+    background-image: url('your-image-url.jpg'); /* Optional: add a hero background image */
+    background-size: cover;
+    background-position: center;
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 header p {
-    font-size: 1.2em;
-    margin-top: 10px;
+    font-size: 1.4em;
+    margin-top: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Section styles */
 section {
-    padding: 20px;
-    margin: 20px;
-    background-color: #e0ffff; /* light cyan background for content area */
-    border-radius: 8px;
+    padding: 40px;
+    margin: 30px;
+    background-color: #e0ffff;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    color: #008b8b; /* medium sea green */
-    font-size: 1.8em;
-    border-bottom: 2px solid #20b2aa; /* underline with light sea green */
-    padding-bottom: 5px;
+    color: #008b8b;
+    font-size: 2em;
+    border-bottom: 3px solid #20b2aa;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 ul, dl {
@@ -44,36 +52,89 @@ ul, dl {
 }
 
 ul li, dl dt, dl dd {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 /* Links */
 a {
-    color: #20b2aa; /* sea green color for links */
+    color: #20b2aa;
     text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 a:hover {
-    color: #008b8b; /* dark sea green on hover */
+    color: #008b8b;
     text-decoration: underline;
+    transform: scale(1.05);
 }
 
-/* Blockquote */
-blockquote {
-    font-style: italic;
-    background-color: #f5fffa; /* mint cream background for the quote */
-    border-left: 5px solid #20b2aa; /* border in light sea green */
-    padding: 10px;
-    margin-top: 20px;
-    color: #006400; /* dark green text for the quote */
+/* Card Layout for Projects */
+ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
 }
 
-dl dt {
+ul li {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+ul li strong {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #20b2aa;
     font-weight: bold;
-    color: #008b8b; /* medium sea green */
+    text-decoration: none;
 }
 
-dl dd {
-    margin-left: 20px;
-    color: #2f4f4f; /* dark sea green */
+ul li a:hover {
+    color: #008b8b;
+}
+
+/* Footer */
+footer {
+    background-color: #20b2aa;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #008b8b;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    section {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    ul {
+        grid-template-columns: 1fr;
+    }
 }
