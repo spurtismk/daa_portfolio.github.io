@@ -1,65 +1,333 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Restaurant Management System</title>
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #d5dde6;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #3a6ea5;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        h2 {
+            margin-top: 20px;
+            border-bottom: 2px solid #3a6ea5;
+            padding-bottom: 5px;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .code {
+            background: #eef;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Hello, I'm Spurti S M K. Welcome to my 'Design and Analysis of Algorithm' course portfolio. 👋</h1>
-        <p> Here's a glimpse of my work:</p>
-    </header>
+   
 
-    <section>
-        <h2>🛠️ Projects</h2>
-        <ul>
-            <li><strong>Project 1</strong>: A short description of your project1.</li>
-            <li><strong>Project 2</strong>: A short description of another project2.</li>
-        </ul>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        .description, .algorithms {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .content {
+            margin-top: 20px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        ul {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
 
-        <h2>🚀 Skills</h2>
-        <ul>
-            <li>C++, Python</li>
-            <li>Data Structures and Algorithms</li>
-        </ul>
+    <h1>Restaurant Management System</h1>
 
-       
-        <h2>Portfolio Topic</h2>
-        <dl>
-            <dt>Course Name</dt>
-            <dd>DESIGN AND ANALYSIS OF ALGORITHM</dd>
+    <div class="description">
+        <h2>Description</h2>
+        <div class="content">
+            <p>This system is designed to manage various operations in a restaurant, including:</p>
+            <ul>
+                <li>Customer queue management for efficient service.</li>
+                <li>Table reservation system to handle bookings and availability.</li>
+                <li>Inventory management to track items and stock levels.</li>
+                <li>Menu and billing to manage food orders and total revenue.</li>
+                <li>Delivery system for calculating shortest routes for delivery.</li>
+                <li>Lodging system for managing room bookings and availability.</li>
+            </ul>
+            <p>The goal of this system is to enhance operational efficiency, providing an organized method to manage customers, reservations, inventory, and other restaurant-related services.</p>
+        </div>
+    </div>
 
-            <dt>Course Code</dt>
-            <dd>24ECSC205 </dd>
+ <div class="description">
+        <h2>Customer Queue Management</h2>
+        <div class="content">
+            <p>The Customer Queue Management system ensures that customers are served in the order they arrive. It uses a queue data structure where customers are added to the queue as they arrive and removed in the same order (FIFO - First In, First Out) when they are served. This helps ensure a fair and efficient process for handling customers.</p>
+            <p>The primary algorithm used here is the FIFO (First In, First Out) algorithm, which ensures that customers are served in the order they joined the queue. This approach is simple but effective, ensuring that no customer is skipped or kept waiting unnecessarily.</p>
+        </div>
+    </div>
 
-            <dt>TEAM MEMBERS</dt>
-            <dd>CHINMAYI P HOSUR (153)</dd>
-            <dd>SRIPRIYA A H (145)</dd>
-            <dd>SPURTHI S M K (158)</dd>
-            <dd>H.S TEJASWINI (147)</dd>
+    <!-- Table Reservation System and Algorithms -->
+    <div class="description">
+        <h2>Table Reservation System</h2>
+        <div class="content">
+            <p>The Table Reservation System allows customers to book tables in advance, ensuring that tables are available when needed. The system tracks which tables are reserved and which are available, allowing the staff to manage bookings efficiently and avoid double bookings.</p>
+            <p>The algorithm used here primarily involves a Lookup and Reservation Management approach. The system maintains a list of tables, each marked as either reserved or available. When a table is reserved, the algorithm checks if the table is already taken, and if not, reserves the table. If a table is released, it updates the status, making it available for future reservations.</p>
+            <p>For optimizing the table availability check, the system uses simple lookup operations, ensuring quick reservation and release processes.</p>
+        </div>
+    </div>
 
-            <dt>Course Instructor</dt>
-            <dd>MR. MALLIKARJUN AKKI</dd>
 
-            <dt>University</dt>
-            <dd>KLE TECHNOLOGICAL UNIVERSITY,HUBLI</dd>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        .description, .algorithms {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .content {
+            margin-top: 20px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        ul {
+            margin-left: 20px;
+        }
+    </style>
 
-            <dt>Portfolio Topic/Domain</dt>
-            <dd>Google</dd>
-        </dl>
+    <h3>C++ Code</h3>
+    <div class="code-container">
+        <pre>
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;map&gt;
+#include &lt;string&gt;
 
-        <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
+using namespace std;
 
-        <button onclick="location.href='mailto:smkspurti@gmail.com'">Contact Me</button>    
-        
+// Customer queue management
+class CustomerQueue {
+    queue&lt;string&gt; customers;
+public:
+    void addCustomer(const string&amp; name) {
+        customers.push(name);
+    }
 
-        <!-- New Button to View Course Overview Text File -->
-        <button onclick="window.open('https://github.com/01fe23cs262/DAA_PORTFOLIO.github.io/blob/main/overview.md', '_blank')">View Course Overview</button>
-        <!-- New Button to View project  Overview Text File -->
-         <button onclick="window.open('https://github.com/01fe23cs262/DAA_PORTFOLIO.github.io/blob/main/project.md', '_blank')">View PROJECT OVERVIEW</button>
-    </section>
+    void removeCustomer() {
+        if (!customers.empty()) {
+            cout &lt;&lt; "Customer " &lt;&lt; customers.front() &lt;&lt; " has left.\\n";
+            customers.pop();
+        } else {
+            cout &lt;&lt; "No customers in the queue.\\n";
+        }
+    }
+
+    void displayQueue() {
+        if (customers.empty()) {
+            cout &lt;&lt; "No customers in the queue.\\n";
+            return;
+        }
+        queue&lt;string&gt; temp = customers;
+        cout &lt;&lt; "Customers in the queue:\\n";
+        while (!temp.empty()) {
+            cout &lt;&lt; temp.front() &lt;&lt; "\\n";
+            temp.pop();
+        }
+    }
+};
+
+// Reservation system with number of seats
+class Reservations {
+    map&lt;int, pair&lt;string, int&gt;&gt; reservations;  // table number -&gt; (customer name, number of seats)
+    int totalTables;
+public:
+    Reservations(int tables) : totalTables(tables) {}
+
+    bool reserveTable(int table, const string&amp; name, int seats) {
+        if (table &gt; totalTables || table &lt; 1) {
+            cout &lt;&lt; "Invalid table number.\\n";
+            return false;
+        }
+        if (reservations.count(table)) {
+            cout &lt;&lt; "Table already reserved.\\n";
+            return false;
+        }
+        reservations[table] = make_pair(name, seats);
+        cout &lt;&lt; "Table " &lt;&lt; table &lt;&lt; " reserved for " &lt;&lt; name &lt;&lt; " with " &lt;&lt; seats &lt;&lt; " seats.\\n";
+        return true;
+    }
+
+    void releaseTable(int table) {
+        if (reservations.erase(table)) {
+            cout &lt;&lt; "Table " &lt;&lt; table &lt;&lt; " is now available.\\n";
+        } else {
+            cout &lt;&lt; "Table " &lt;&lt; table &lt;&lt; " is not reserved.\\n";
+        }
+    }
+
+    void displayReservations() {
+        if (reservations.empty()) {
+            cout &lt;&lt; "No reservations.\\n";
+            return;
+        }
+        cout &lt;&lt; "Current reservations:\\n";
+        for (auto &it : reservations) {
+            cout &lt;&lt; "Table " &lt;&lt; it.first &lt;&lt; ": " &lt;&lt; it.second.first &lt;&lt; " (Seats: " &lt;&lt; it.second.second &lt;&lt; ")\\n";
+        }
+    }
+};
+
+// Main function
+int main() {
+    CustomerQueue queue;
+    Reservations reservations(10);  // 10 tables in the reservation system
+
+    int choice;
+    do {
+        cout &lt;&lt; "\\nRestaurant Management System\\n";
+        cout &lt;&lt; "1. Manage Customer Queue\\n";
+        cout &lt;&lt; "2. Manage Reservations\\n";
+        cout &lt;&lt; "3. Exit\\n";
+        cout &lt;&lt; "Enter your choice: ";
+        cin &gt;&gt; choice;
+
+        switch (choice) {
+            case 1: {
+                int queueChoice;
+                do {
+                    cout &lt;&lt; "\\nCustomer Queue Management\\n";
+                    cout &lt;&lt; "1. Add Customer\\n";
+                    cout &lt;&lt; "2. Remove Customer\\n";
+                    cout &lt;&lt; "3. Display Queue\\n";
+                    cout &lt;&lt; "4. Back\\n";
+                    cout &lt;&lt; "Enter your choice: ";
+                    cin &gt;&gt; queueChoice;
+
+                    if (queueChoice == 1) {
+                        string name;
+                        cout &lt;&lt; "Enter customer name: ";
+                        cin &gt;&gt; name;
+                        queue.addCustomer(name);
+                    } else if (queueChoice == 2) {
+                        queue.removeCustomer();
+                    } else if (queueChoice == 3) {
+                        queue.displayQueue();
+                    }
+                } while (queueChoice != 4);
+                break;
+            }
+            case 2: {
+                int reservationChoice;
+                do {
+                    cout &lt;&lt; "\\nReservation Management\\n";
+                    cout &lt;&lt; "1. Reserve Table\\n";
+                    cout &lt;&lt; "2. Release Table\\n";
+                    cout &lt;&lt; "3. Display Reservations\\n";
+                    cout &lt;&lt; "4. Back\\n";
+                    cout &lt;&lt; "Enter your choice: ";
+                    cin &gt;&gt; reservationChoice;
+
+                    if (reservationChoice == 1) {
+                        int table;
+                        string name;
+                        int seats;
+                        cout &lt;&lt; "Enter table number: ";
+                        cin &gt;&gt; table;
+                        cout &lt;&lt; "Enter customer name: ";
+                        cin &gt;&gt; name;
+                        cout &lt;&lt; "Enter number of seats: ";
+                        cin &gt;&gt; seats;
+                        reservations.reserveTable(table, name, seats);
+                    } else if (reservationChoice == 2) {
+                        int table;
+                        cout &lt;&lt; "Enter table number to release: ";
+                        cin &gt;&gt; table;
+                        reservations.releaseTable(table);
+                    } else if (reservationChoice == 3) {
+                        reservations.displayReservations();
+                    }
+                } while (reservationChoice != 4);
+                break;
+            }
+            case 3:
+                cout &lt;&lt; "Exiting...\\n";
+                break;
+            default:
+                cout &lt;&lt; "Invalid choice. Please try again.\\n";
+        }
+    } while (choice != 3);
+
+    return 0;
+}
+        </pre>
+    </div>
+    
+    
 </body>
 </html>
