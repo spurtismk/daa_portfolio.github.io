@@ -1,110 +1,79 @@
-/* Reset default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Global Styles */
+/* General styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f5f5f5;
     margin: 0;
-    padding: 20px; /* Adding padding to the body to prevent sticking at the top */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Aligns content towards the top */
-    min-height: 100vh;
+    padding: 0;
+    background-color: #f0f8ff; /* light sea blue background */
+    color: #2f4f4f; /* dark sea green text color */
 }
 
-/* Main Container */
-section {
-    background-color: white;
-    padding: 2rem;
-    width: 90%;
-    max-width: 800px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-align: center;
-    margin-top: 30px; /* Adding margin to ensure there's space from the top */
-}
-
-/* Header */
 header {
-    background-color: #4CAF50;
+    background-color: #20b2aa; /* light sea green */
     color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
+    padding: 20px;
+    text-align: center;
 }
 
 header h1 {
-    font-size: 2rem;
-    margin: 0;
+    font-size: 2.5em;
 }
 
 header p {
-    margin: 1rem 0 0;
+    font-size: 1.2em;
+    margin-top: 10px;
 }
 
-/* Section Titles */
+/* Section styles */
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #e0ffff; /* light cyan background for content area */
+    border-radius: 8px;
+}
+
 h2 {
-    color: #4CAF50;
-    margin-bottom: 1rem;
+    color: #008b8b; /* medium sea green */
+    font-size: 1.8em;
+    border-bottom: 2px solid #20b2aa; /* underline with light sea green */
+    padding-bottom: 5px;
 }
 
-/* List Items */
-ul {
-    list-style: none;
-    padding: 0;
+ul, dl {
+    margin: 20px;
+    padding-left: 20px;
 }
 
-ul li {
-    background-color: #e7f7e7;
-    margin-bottom: 0.5rem;
-    padding: 0.75rem;
-    border-radius: 5px;
+ul li, dl dt, dl dd {
+    margin-bottom: 10px;
 }
 
 /* Links */
 a {
-    color: #4CAF50;
+    color: #20b2aa; /* sea green color for links */
     text-decoration: none;
-    font-weight: bold;
 }
 
 a:hover {
+    color: #008b8b; /* dark sea green on hover */
     text-decoration: underline;
-}
-
-/* Definition List */
-dl dt {
-    font-weight: bold;
-    color: #333;
-    margin-top: 1rem;
-}
-
-dl dd {
-    margin-left: 1.5rem;
-    color: #666;
 }
 
 /* Blockquote */
 blockquote {
     font-style: italic;
-    color: #555;
-    border-left: 4px solid #4CAF50;
-    padding-left: 1rem;
-    margin-top: 2rem;
+    background-color: #f5fffa; /* mint cream background for the quote */
+    border-left: 5px solid #20b2aa; /* border in light sea green */
+    padding: 10px;
+    margin-top: 20px;
+    color: #006400; /* dark green text for the quote */
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    section {
-        padding: 1.5rem;
-    }
+dl dt {
+    font-weight: bold;
+    color: #008b8b; /* medium sea green */
+}
 
-    header {
-        padding: 1.5rem;
-    }
+dl dd {
+    margin-left: 20px;
+    color: #2f4f4f; /* dark sea green */
 }
