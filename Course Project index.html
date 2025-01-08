@@ -1,169 +1,120 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Management System</title>
-   <style>
+    <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
+            background-color: #f4f4f9;
             margin: 0;
             padding: 0;
-            background: #f4f4f9;
             color: #333;
         }
         header {
-            background: #d5dde6;
-            color: #fff;
-            padding: 10px 20px;
+            background-color: #3a6ea5;
+            color: white;
+            padding: 20px;
             text-align: center;
         }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 900px;
+            margin: 40px auto;
             padding: 20px;
             background: #fff;
             border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2, h3 {
-            color: #3a6ea5;
-        }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         h2 {
-            margin-top: 20px;
+            color: #3a6ea5;
+            font-size: 1.8em;
             border-bottom: 2px solid #3a6ea5;
+            margin-bottom: 20px;
             padding-bottom: 5px;
         }
+        .description, .algorithms {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
         ul {
-            margin: 10px 0;
-            padding-left: 20px;
+            margin-left: 20px;
+            padding-left: 10px;
         }
         li {
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
-        .code {
-            background: #eef;
-            padding: 5px 10px;
+        .code-container {
+            background-color: #eef;
+            padding: 15px;
             border-radius: 5px;
             font-family: monospace;
+            overflow-x: auto;
         }
-    </style>
-</head>
-<body>
-   
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Management System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f9;
-        }
-        h1 {
-            color: #333;
-        }
-        .description, .algorithms {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        .content {
-            margin-top: 20px;
-            font-size: 1.1em;
+        pre {
+            margin: 0;
+            font-size: 0.9em;
             line-height: 1.6;
         }
-        ul {
-            margin-left: 20px;
-        }
     </style>
 </head>
 <body>
 
+<header>
     <h1>Restaurant Management System</h1>
+</header>
 
+<div class="container">
+    <!-- Introduction -->
     <div class="description">
-        <h2>Description</h2>
-        <div class="content">
-            <p>This system is designed to manage various operations in a restaurant, including:</p>
-            <ul>
-                <li>Customer queue management for efficient service.</li>
-                <li>Table reservation system to handle bookings and availability.</li>
-                <li>Inventory management to track items and stock levels.</li>
-                <li>Menu and billing to manage food orders and total revenue.</li>
-                <li>Delivery system for calculating shortest routes for delivery.</li>
-                <li>Lodging system for managing room bookings and availability.</li>
-            </ul>
-            <p>The goal of this system is to enhance operational efficiency, providing an organized method to manage customers, reservations, inventory, and other restaurant-related services.</p>
-        </div>
+        <h2>System Overview</h2>
+        <p>This Restaurant Management System is designed to streamline various operations in a restaurant. It handles customer queues, table reservations, inventory tracking, and order processing, aiming to optimize both customer experience and operational efficiency.</p>
+        <p>The key features of the system include:</p>
+        <ul>
+            <li>Customer Queue Management</li>
+            <li>Table Reservation System</li>
+            <li>Inventory Management</li>
+            <li>Menu and Billing System</li>
+            <li>Delivery Management</li>
+            <li>Lodging and Room Booking</li>
+        </ul>
+        <p>By integrating these systems into one cohesive platform, the Restaurant Management System ensures that tasks are handled smoothly, reducing wait times, optimizing table usage, and maintaining accurate records.</p>
     </div>
 
- <div class="description">
+    <!-- Customer Queue Management -->
+    <div class="description">
         <h2>Customer Queue Management</h2>
-        <div class="content">
-            <p>The Customer Queue Management system ensures that customers are served in the order they arrive. It uses a queue data structure where customers are added to the queue as they arrive and removed in the same order (FIFO - First In, First Out) when they are served. This helps ensure a fair and efficient process for handling customers.</p>
-            <p>The primary algorithm used here is the FIFO (First In, First Out) algorithm, which ensures that customers are served in the order they joined the queue. This approach is simple but effective, ensuring that no customer is skipped or kept waiting unnecessarily.</p>
-        </div>
+        <p>The Customer Queue Management feature ensures that customers are served in the order they arrive. It uses a FIFO (First In, First Out) approach, guaranteeing that no customer is skipped or left waiting too long. This system helps in managing the customer flow and improving service efficiency.</p>
+        <p>Algorithm used:</p>
+        <ul>
+            <li>FIFO (First In, First Out) algorithm</li>
+        </ul>
     </div>
 
-    <!-- Table Reservation System and Algorithms -->
+    <!-- Table Reservation System -->
     <div class="description">
         <h2>Table Reservation System</h2>
-        <div class="content">
-            <p>The Table Reservation System allows customers to book tables in advance, ensuring that tables are available when needed. The system tracks which tables are reserved and which are available, allowing the staff to manage bookings efficiently and avoid double bookings.</p>
-            <p>The algorithm used here primarily involves a Lookup and Reservation Management approach. The system maintains a list of tables, each marked as either reserved or available. When a table is reserved, the algorithm checks if the table is already taken, and if not, reserves the table. If a table is released, it updates the status, making it available for future reservations.</p>
-            <p>For optimizing the table availability check, the system uses simple lookup operations, ensuring quick reservation and release processes.</p>
-        </div>
+        <p>Our Table Reservation System allows customers to book tables in advance. This ensures that there is no confusion about table availability. The system keeps track of reserved and available tables, preventing double-booking and ensuring a smooth dining experience.</p>
+        <p>The table reservation algorithm checks if a table is available and reserves it for the customer. Once the customer is done, the table's status is updated as available again.</p>
+        <p>Algorithm used:</p>
+        <ul>
+            <li>Table Lookup and Reservation Management</li>
+        </ul>
     </div>
 
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Management System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f9;
-        }
-        h1 {
-            color: #333;
-        }
-        .description, .algorithms {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        .content {
-            margin-top: 20px;
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-        ul {
-            margin-left: 20px;
-        }
-    </style>
-
-    <h3>C++ Code</h3>
-    <div class="code-container">
-        <pre>
+    <!-- C++ Code Section -->
+    <div class="description">
+        <h2>Code Implementation</h2>
+        <h3>C++ Code</h3>
+        <div class="code-container">
+            <pre>
 #include &lt;iostream&gt;
 #include &lt;queue&gt;
 #include &lt;map&gt;
@@ -171,7 +122,7 @@
 
 using namespace std;
 
-// Customer queue management
+// Customer Queue Management
 class CustomerQueue {
     queue&lt;string&gt; customers;
 public:
@@ -181,10 +132,10 @@ public:
 
     void removeCustomer() {
         if (!customers.empty()) {
-            cout &lt;&lt; "Customer " &lt;&lt; customers.front() &lt;&lt; " has left.\\n";
+            cout &lt;&lt; "Customer " &lt;&lt; customers.front() &lt;&lt; " has been served.\\n";
             customers.pop();
         } else {
-            cout &lt;&lt; "No customers in the queue.\\n";
+            cout &lt;&lt; "The queue is empty. No customers to serve.\\n";
         }
     }
 
@@ -202,9 +153,9 @@ public:
     }
 };
 
-// Reservation system with number of seats
+// Table Reservation System
 class Reservations {
-    map&lt;int, pair&lt;string, int&gt;&gt; reservations;  // table number -&gt; (customer name, number of seats)
+    map&lt;int, pair&lt;string, int&gt;&gt; reservations;  // table number -> (customer name, number of seats)
     int totalTables;
 public:
     Reservations(int tables) : totalTables(tables) {}
@@ -233,7 +184,7 @@ public:
 
     void displayReservations() {
         if (reservations.empty()) {
-            cout &lt;&lt; "No reservations.\\n";
+            cout &lt;&lt; "No reservations found.\\n";
             return;
         }
         cout &lt;&lt; "Current reservations:\\n";
@@ -325,9 +276,11 @@ int main() {
 
     return 0;
 }
-        </pre>
+            </pre>
+        </div>
     </div>
-    
-    
+
+</div>
+
 </body>
 </html>
