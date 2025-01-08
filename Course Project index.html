@@ -63,52 +63,44 @@
     <!-- System Overview -->
     <div class="description">
         <h2>System Overview</h2>
-        <p>This Restaurant Management System is designed to streamline various operations in a restaurant. It handles customer queues, table reservations, inventory tracking, and order processing, aiming to optimize both customer experience and operational efficiency.</p>
-        <p>The key features of the system include:</p>
+        <p>This Restaurant Management System integrates various essential functionalities for restaurant operations, ensuring a smooth and efficient workflow. Below is a brief explanation of the core features:</p>
         <ul>
-            <li>Customer Queue Management</li>
-            <li>Table Reservation System</li>
-            <li>Inventory Management</li>
-            <li>Menu and Billing System</li>
-            <li>Delivery Management</li>
+            <li><strong>Customer Queue Management:</strong> Manages the order in which customers are served, ensuring that no one is skipped or left waiting too long, optimizing service time.</li>
+            <li><strong>Table Reservation System:</strong> Allows customers to reserve tables in advance, ensuring there is no double-booking, and providing a smooth dining experience by managing available tables effectively.</li>
+            <li><strong>Inventory Management:</strong> Tracks the availability of food ingredients, supplies, and other essential items, ensuring that stock levels are maintained and orders are replenished in time.</li>
+            <li><strong>Menu Management:</strong> Allows restaurant staff to manage the food and beverage menu, keeping track of dishes and prices. It integrates with the billing system to update menu items for the customers in real-time.</li>
+            <li><strong>Billing System:</strong> Generates bills for customers based on the menu items ordered, calculates total prices, applies taxes or discounts, and processes payment efficiently.</li>
+            <li><strong>Delivery Management:</strong> Manages orders that are placed for delivery, tracking their progress and ensuring timely dispatch, improving customer satisfaction for delivery-based services.</li>
+            <li><strong>Lodging System:</strong> Handles room bookings for guests staying at the restaurant’s associated lodging facilities. It tracks availability, booking dates, and guest information.</li>
         </ul>
-        <p>By integrating these systems into one cohesive platform, the Restaurant Management System ensures that tasks are handled smoothly, reducing wait times, optimizing table usage, and maintaining accurate records.</p>
     </div>
 
-    <!-- Customer Queue Management -->
+    <!-- Menu and Inventory System -->
     <div class="description">
-        <h2>Customer Queue Management</h2>
-        <p>The Customer Queue Management feature ensures that customers are served in the order they arrive. It uses a FIFO (First In, First Out) approach, guaranteeing that no customer is skipped or left waiting too long. This system helps in managing the customer flow and improving service efficiency.</p>
-    </div>
+        <h2>Menu and Inventory Management</h2>
+        <p>I was responsible for creating the Menu and Inventory Management parts of the system. These functionalities are integral to the smooth operation of the restaurant and play a crucial role in ensuring that items are readily available for customers and that stock levels are kept up to date.</p>
 
-    <!-- Table Reservation System -->
-    <div class="description">
-        <h2>Table Reservation System</h2>
-        <p>The Table Reservation System allows customers to book tables in advance, ensuring that there is no confusion about table availability. The system keeps track of reserved and available tables, preventing double-booking and ensuring a smooth dining experience. The algorithm used ensures efficient handling of table reservations by checking availability before confirming bookings, and automatically updating table status once the customer is seated.</p>
-    </div>
+        <h3>Menu Management</h3>
+        <p>The Menu Management system enables restaurant staff to add, remove, or update menu items. It allows the restaurant to manage various categories, such as appetizers, main courses, desserts, and drinks. By using the system, restaurant staff can easily modify prices, descriptions, and availability of dishes in real-time. This feature ensures that the menu displayed to customers is always up to date and reflects any changes in offerings.</p>
 
-    <!-- Inventory Management -->
-    <div class="description">
-        <h2>Inventory Management</h2>
-        <p>The Inventory Management system plays a crucial role in maintaining an optimal stock level within the restaurant. It tracks the supplies, ingredients, and items required to run day-to-day operations. This functionality ensures that restaurant managers are informed of stock levels and can make timely orders to replenish items before they run out. This reduces food waste and minimizes shortages that could affect service.</p>
-    </div>
-
-    <!-- Menu and Billing System -->
-    <div class="description">
-        <h2>Menu and Billing System</h2>
-        <p>The Menu and Billing system is designed to simplify the customer ordering and payment process. It allows customers to browse the restaurant's menu, place orders efficiently, and generate bills for each customer. The system automatically calculates the total price, applying any applicable taxes or discounts. This feature is integrated with the inventory to adjust stock levels after each order, ensuring the menu reflects accurate availability of items.</p>
+        <h3>Inventory Management</h3>
+        <p>The Inventory Management system keeps track of all the ingredients, supplies, and items in the restaurant. It updates inventory levels as customers place orders and ensures the stock levels are properly maintained. The system alerts staff when items are running low and need to be replenished. This reduces the chances of running out of essential ingredients and ensures smooth service without disruptions. Additionally, it integrates with the billing system to make sure that any changes in inventory are reflected in the menu's item availability and pricing.</p>
     </div>
 
     <!-- Learning Outcomes -->
     <div class="description">
         <h2>Learning Outcomes</h2>
-        <p>Throughout the development of this Restaurant Management System, I gained a wealth of knowledge and practical experience. One of the key learning outcomes was understanding the importance of system design and how various components need to interact seamlessly to create an efficient workflow. I learned how to integrate customer management, reservations, and billing systems into a unified platform. The project sharpened my skills in object-oriented programming, allowing me to better structure and organize code for readability and scalability.</p>
-        <p>Additionally, I deepened my understanding of algorithms and data structures. For example, implementing the FIFO algorithm for the customer queue and managing reservations using hash maps gave me hands-on experience with real-world applications of these concepts. I also developed a strong understanding of database management, as the system relied on efficient data storage for tracking tables, reservations, and inventory levels.</p>
-        <p>Working on the inventory and menu management system further enhanced my problem-solving skills. I had to design a system that could accurately track stock levels, integrate seamlessly with the billing process, and prevent discrepancies in the inventory data. This project helped me realize the importance of maintaining accurate data flow in real-time systems and the impact that small errors can have on operational efficiency.</p>
-        <p>In addition to technical skills, this project also taught me the significance of user experience (UX) design. I focused on creating an intuitive interface that would be easy to use for restaurant staff. This involved considering user needs, minimizing complexity, and ensuring that the system could be operated efficiently in a fast-paced environment.</p>
-        <p>Finally, this project strengthened my overall programming and project management abilities. I learned how to break down complex problems into smaller, manageable tasks and effectively manage time to meet deadlines. The experience taught me the value of testing and debugging, ensuring that each feature works as expected and handles edge cases appropriately.</p>
+        <ul>
+            <li><strong>System Design:</strong> I learned how to design and implement a cohesive system that integrates multiple functionalities, each playing a key role in the restaurant’s operations. This helped me understand how to connect different modules, such as inventory, billing, and customer management, into one unified platform.</li>
+            <li><strong>Object-Oriented Programming:</strong> Throughout the project, I deepened my knowledge of object-oriented programming principles, especially in designing classes and handling real-world data with structures like queues and maps for reservations and customer management.</li>
+            <li><strong>Algorithms and Data Structures:</strong> Implementing algorithms like FIFO for queue management and using hash maps for efficient table reservation management enhanced my understanding of data structures and how they can be used in real-world applications.</li>
+            <li><strong>Database and Real-Time Data Handling:</strong> The project enhanced my understanding of database management concepts, particularly in keeping real-time data consistent across multiple systems, like updating stock levels and billing after every order.</li>
+            <li><strong>User Interface Design:</strong> I learned the importance of creating a user-friendly interface that is easy to use under pressure, especially in fast-paced environments like restaurants. This taught me how to focus on user needs and simplify complex processes.</li>
+            <li><strong>Problem-Solving and Debugging:</strong> By dealing with complex scenarios, such as preventing double bookings in the reservation system or maintaining accurate inventory counts, I learned valuable problem-solving skills. I also gained experience in debugging and testing to ensure smooth functionality.</li>
+            <li><strong>Time Management:</strong> This project helped me develop time management skills by breaking down tasks into smaller pieces and working systematically to complete different components of the system. It taught me how to prioritize features and meet deadlines efficiently.</li>
+            <li><strong>Team Collaboration (If applicable):</strong> If this was a team project, I would highlight the importance of collaboration and how we worked together to merge our individual parts into one comprehensive system. Even though I focused on menu and inventory, I coordinated with others to ensure seamless integration of all components.</li>
+        </ul>
     </div>
-
 </div>
 
 </body>
