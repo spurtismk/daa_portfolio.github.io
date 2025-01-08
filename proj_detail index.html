@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        header {
+            background-color: #2e7d32;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #2e7d32;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+        .button:hover {
+            background-color: #388e3c;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2e7d32;
+            color: white;
+        }
+        .code-link {
+            color: #388e3c;
+            text-decoration: none;
+        }
+        .code-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Restaurant Management System</h1>
+        <p>Efficient Automation for Restaurant Operations</p>
+    </header>
+
+    <div class="container">
+        <h2>Introduction</h2>
+        <p>This project focuses on developing a comprehensive Restaurant Management System (RMS) to streamline restaurant operations. It addresses key areas such as order management, billing, inventory tracking, and delivery logistics, with the aim to improve efficiency and customer satisfaction.</p>
+
+        <h2>Problem Statement</h2>
+        <p>Restaurants often face challenges in managing high-volume operations manually, resulting in inefficiencies, delays, and errors. The goal of this system is to automate order management, real-time inventory tracking, and billing, ultimately optimizing restaurant workflows.</p>
+
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Customer Queue</strong>: Efficiently manage customer waitlist.</li>
+            <li><strong>Reservations</strong>: Seamlessly manage table bookings and availability.</li>
+            <li><strong>Inventory Management</strong>: Track and update stock in real-time.</li>
+            <li><strong>Food Menu and Billing</strong>: Handle orders, menu display, and automated billing.</li>
+            <li><strong>Delivery System</strong>: Calculates shortest routes for deliveries using Dijkstra's Algorithm.</li>
+            <li><strong>Lodging</strong>: Manage rooms and bookings for hotel-based restaurants.</li>
+        </ul>
+
+        <h2>Algorithms Used</h2>
+        <p>Key algorithms used in this system to improve efficiency and performance include:</p>
+        <ul>
+            <li><strong>Dijkstra's Algorithm</strong>: Used for finding the shortest path in the delivery system.</li>
+            <li><strong>Depth-First Search (DFS) / Breadth-First Search (BFS)</strong>: Used for route planning in graph-based systems.</li>
+            <li><strong>Brute Force Search</strong>: Applied to find specific values in collections such as reservations and inventory.</li>
+            <li><strong>Greedy Approach</strong>: Utilized in room booking management for selecting available rooms.</li>
+            <li><strong>Quick Sorting</strong>: Helps in managing room availability using sorted data structures.</li>
+            <li><strong>Priority Queue</strong>: Ensures the shortest routes are always processed first in the Delivery System.</li>
+        </ul>
+
+        <h2>Delivery System - Dijkstra's Algorithm</h2>
+        <p>The Delivery System uses <strong>Dijkstra's Algorithm</strong> to find the shortest route from the restaurant to a customer's address, considering road distances and travel times. The algorithm calculates the best path using a graph where locations are nodes, and roads are edges with weights.</p>
+        <p>Time Complexity: O((V + E) log V)</p>
+        <p>Space Complexity: O(V + E)</p>
+
+        <a href="https://github.com/01fe23cs262/sarnath.github.io/blob/d1c2f42aa90c317b588659c0c489f3620d3c382a/dij.cpp" class="code-link">View Dijkstra's Algorithm Code</a>
+
+        <h2>Priority Queue - Shortest Distance</h2>
+        <p>The <strong>Priority Queue</strong> stores locations with their shortest distances and helps in exploring the shortest path. The queue ensures that the closest location is always processed next, optimizing the route selection process.</p>
+        <p>Time Complexity: O(log n) for insertion and extraction</p>
+        <p>Space Complexity: O(n)</p>
+
+        <a href="https://github.com/01fe23cs262/sarnath.github.io/blob/40f71194a508ac78a63d42b454c5188957325b48/priorityque.cpp" class="code-link">View Priority Queue Code</a>
+
+        <h2>Inventory Management</h2>
+        <p>The system tracks inventory items in real-time using a <strong>map</strong> data structure. Inventory is updated with new stock quantities or checked for item availability. The update operation has a time complexity of O(log n).</p>
+
+        <p><strong>Key Algorithm for Inventory Update:</strong></p>
+        <pre>
+        If the item exists in inventory, increment the quantity.
+        If the item does not exist, add the new item to the inventory.
+        </pre>
+
+        <p>Time Complexity for displaying inventory: O(n)</p>
+
+        <h2>Conclusion</h2>
+        <p>The Restaurant Management System integrates critical operations like order processing, billing, inventory management, and deliveries using efficient algorithms to streamline restaurant operations and enhance customer experience. This project demonstrates the potential of automation to address common challenges in the hospitality industry.</p>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Restaurant Management System. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
